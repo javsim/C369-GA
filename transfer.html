@@ -9,18 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-          font-family: Arial, sans-serif;
-            background-color:  #d0e7f9;
+            background-color: #d0e7f9;
         }
-        
-        .login-container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+
     </style>
 </head>
 <body>
@@ -35,19 +26,20 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link disabled" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="wallet.html">Wallet</a>
+                <a class="nav-link" href="wallet.html">Wallet</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="subscription.html">Subscription</a>
+                <a class="nav-link" href="subscription.html">Subscription</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="insights.html">Insights</a>
+                <a class="nav-link" href="insights.html">Insights</a>
               </li>
+              
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Profile
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -56,36 +48,40 @@
                   <li><a class="dropdown-item" href="login.html">Logout</a></li>
                 </ul>
               </li>
-              
-            </ul>
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="login.html">Login</a>
-              </li>
             </ul>
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+            </form>
           </div>
         </div>
       </nav>
    
-      <div class="login-container">
-        <div class="login-header text-center">
-            <h1>Forgot Password</h1>
-        </div>
-        <hr>
+      <div class="payment-form container mt-5">
+        <h2>Transfer to:</h2>
         <form>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password">
+            <div class="mb-3 mt-3">
+                <label for="name">Name:</label><br>
+                <input type="text" class="form-control" placeholder="Enter name">
             </div>
-            <a href="login.html" class="btn btn-primary w-100">Change Password</a>
+            <div class="mb-3 mt-3">
+                <label for="acc">Account Number:</label><br>
+                <input type="number" class="form-control" placeholder="Enter account number">
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="amount">Amount:</label><br>
+                <input type="number" class="form-control" placeholder="Enter amount">
+            </div>
+            
         </form>
+        <br>
+        <button type="submit" id="btn" class="btn btn-primary">Submit</button>
     </div>
-</div>
-
-    
+    <script>
+        document.getElementById('btn').addEventListener('click', function(){
+            alert('Transferred');
+            window.location.href = 'wallet.html';
+        });
+    </script>
 </body>
 </html>

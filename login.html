@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            /* background-color: #f5f5f5; */
-            background-color: #5473d8;
+          font-family: Arial, sans-serif;
+            background-color:  #d0e7f9;
         }
         .login-container {
             max-width: 400px;
             margin: 50px auto;
             padding: 20px;
-            background-color: #aebdd4;
+            background-color: white;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -37,30 +37,18 @@
         .singpass-btn{
           border-radius:20px;
         }
-        .form-control {
-            margin-bottom: 15px;
-        }
+        
         .forgot-password, .register-link {
             display: block;
             text-align: center;
             margin: 10px 0;
-        }
-        #search {
-            background-color: #c0c05f;
-            border-color: #4cae4c;
-            color: white;
-            border-radius: 20px;
-        }
-        .btn-custom-search:hover {
-            background-color: #4cae4c;
-            border-color: #4cae4c;
         }
 
     </style>
 </head>
 <body>
   <!-- navbar -->
-    <nav id="nav1" class="navbar navbar-expand-lg navbar-light">
+    <nav id="nav1" class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="https://uploads.turbologo.com/uploads/design/preview_image/58292409/watermark_preview_image20240722-1-smlhmd.png"
                 class="logo" width="100" height="80" alt="logo"></a>
@@ -70,20 +58,19 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+                <a class="nav-link disabled" aria-current="page" href="index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="wallet.html">Wallet</a>
+                <a class="nav-link disabled" href="wallet.html">Wallet</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="subscription.html">Subscription</a>
+                <a class="nav-link disabled" href="subscription.html">Subscription</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="insights.html">Insights</a>
+                <a class="nav-link disabled" href="insights.html">Insights</a>
               </li>
-              
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Profile
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -92,11 +79,17 @@
                   <li><a class="dropdown-item" href="#">Logout</a></li>
                 </ul>
               </li>
+              
+            </ul>
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+              </li>
             </ul>
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button id="search" class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+              <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
           </div>
         </div>
       </nav>
@@ -106,7 +99,7 @@
                 <img src="images/Screenshot 2024-07-22 212404.png" alt="5NANCE Logo">
                 <h1>Login</h1>
             </div>
-            <img src="images/Singpass.jpg" type='button' class="singpass-btn"></a>
+            <a href="index.html"><img src="images/Singpass.jpg" type='button' class="singpass-btn"></a>
             <hr>
             <form>
                 <div class="mb-3">
@@ -117,7 +110,7 @@
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" placeholder="Password">
                 </div>
-                <a href="home.html" class="btn btn-primary w-100">Log in</a>
+                <a href="index.html" class="btn btn-primary w-100">Log in</a>
             </form>
             <a href="forgot.html" class="forgot-password">Forgot Password</a>
             <a href="register.html" class="register-link">Don't Have an Account?</a>

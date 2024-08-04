@@ -3,61 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5NANCE</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>5NANCE</title>
     <style>
         body {
-            /* background-color: #f5f5f5; */
-            background-color: #a9f1df;
+            background-color: #d6e4f0;
+            font-family: Arial, sans-serif;
         }
-        #nav1{
-           background-color: #ffbbbb;
+        .subscription-plans {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
         }
-        </style>
+        .plan-card {
+            background-color: #f1f1f1;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            width: 280px;
+            margin: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .plan-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        .plan-card .price {
+            font-size: 2.5em;
+            margin: 15px 0;
+        }
+        .plan-card ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .plan-card ul li {
+            font-size: 1.1em;
+            margin: 10px 0;
+            text-align: left;
+        }
+        .plan-card .check-icon {
+            color: #4caf50;
+        }
+        .plan-card .cross-icon {
+            color: #f44336;
+        }
+        .plan-card .btn {
+            margin-top: 20px;
+            border-radius: 30px;
+            font-size: 1em;
+            padding: 10px 20px;
+        }
+        .plan-card.free-plan {
+            background-color: #1f4ea9;
+            color: white;
+        }
+        .plan-card.plus-plan {
+            background-color: #ac8fff;
+            color: white;
+        }
+        .plan-card.premium-plan {
+            background-color: #d81f88;
+            color: white;
+        }
+        .plan-card.premium-plan .btn {
+            background-color: white;
+        }
+        .best-deal {
+            background-color: #ffc107;
+            color: black;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+    </style>
+    <script>
+        function selectPlan(planName, planPrice) {
+            const url = new URL('selectedplan.html', window.location.origin);
+            url.searchParams.set('plan', planName);
+            url.searchParams.set('price', planPrice);
+            window.location.href = url;
+        }
+    </script>
 </head>
 <body>
-    <!-- navbar -->
-    <nav id="nav1" class="navbar navbar-expand-lg navbar-light">
+    <nav id="nav1" class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="https://uploads.turbologo.com/uploads/design/preview_image/58292409/watermark_preview_image20240722-1-smlhmd.png"
-                class="logo" width="100" height="80" alt="logo"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="home.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="wallet.html">Wallet</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="subscription.html">Subscription</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="insights.html">Insights</a>
-              </li>
-              
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Profile
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Settings</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Logout</a></li>
+            <a class="navbar-brand" href="index.html">
+                <img src="https://uploads.turbologo.com/uploads/design/preview_image/58292409/watermark_preview_image20240722-1-smlhmd.png" 
+                     class="logo" width="100" height="80" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="wallet.html">Wallet</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="subscription.html">Subscription</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="insights.html">Insights</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Profile
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="login.html">Logout</a></li>
+                        </ul>
+                    </li>
                 </ul>
-              </li>
-            </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-          </div>
+                <form class="d-flex ml-auto">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
         </div>
-      </nav>
+    </nav>
+
+    <div class="container">
+        <div class="subscription-plans">
+            <div class="plan-card free-plan" onclick="selectPlan('Basic', 'FREE')">
+                <h3>Basic</h3>
+                <div class="price">FREE</div>
+                <ul>
+                    <li><i class="fas fa-check check-icon"></i> Track spendings</li>
+                    <li><i class="fas fa-times cross-icon"></i> Spendings breakdown</li>
+                    <li><i class="fas fa-times cross-icon"></i> AI tools</li>
+                    <li><i class="fas fa-times cross-icon"></i> Personalized Suggestions</li>
+                </ul>
+                <button class="btn btn-light">Current Plan</button>
+            </div>
+            <div class="plan-card plus-plan" onclick="selectPlan('Plus', 5)">
+                <h3>Plus</h3>
+                <div class="price">$5</div>
+                <ul>
+                    <li><i class="fas fa-check check-icon"></i> Track spendings</li>
+                    <li><i class="fas fa-check check-icon"></i> Spendings breakdown</li>
+                    <li><i class="fas fa-times cross-icon"></i> AI tools</li>
+                    <li><i class="fas fa-times cross-icon"></i> Personalized Suggestions</li>
+                </ul>
+                <button class="btn btn-light">Get Plus <i class="fas fa-arrow-right"></i></button>
+            </div>
+            <div class="plan-card premium-plan" onclick="selectPlan('Premium', 8)">
+                <div class="best-deal">#bestdeal</div>
+                <h3>Premium</h3>
+                <div class="price">$8</div>
+                <ul>
+                    <li><i class="fas fa-check check-icon"></i> Track spendings</li>
+                    <li><i class="fas fa-check check-icon"></i> Spendings breakdown</li>
+                    <li><i class="fas fa-check check-icon"></i> AI tools</li>
+                    <li><i class="fas fa-check check-icon"></i> Personalized Suggestions</li>
+                </ul>
+                <button class="btn btn-light">Get Premium <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

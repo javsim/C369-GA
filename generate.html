@@ -9,17 +9,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-          font-family: Arial, sans-serif;
-            background-color:  #d0e7f9;
+            background-color: #d0e7f9;
+            font-family: Arial, sans-serif;
         }
-        
-        .login-container {
-            max-width: 400px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .text{
+            margin-top:20px;
+            margin-left: 50px;
+        }
+        #ai{
+            color:green;
+        }
+        #areas{
+            color:red;
         }
     </style>
 </head>
@@ -35,19 +36,20 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link disabled" aria-current="page" href="index.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="wallet.html">Wallet</a>
+                <a class="nav-link" href="wallet.html">Wallet</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="subscription.html">Subscription</a>
+                <a class="nav-link" href="subscription.html">Subscription</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="insights.html">Insights</a>
+                <a class="nav-link" href="insights.html">Insights</a>
               </li>
+              
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Profile
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -56,36 +58,34 @@
                   <li><a class="dropdown-item" href="login.html">Logout</a></li>
                 </ul>
               </li>
-              
-            </ul>
-            <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="login.html">Login</a>
-              </li>
             </ul>
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+            </form>
           </div>
         </div>
       </nav>
    
-      <div class="login-container">
-        <div class="login-header text-center">
-            <h1>Forgot Password</h1>
-        </div>
-        <hr>
-        <form>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password">
-            </div>
-            <a href="login.html" class="btn btn-primary w-100">Change Password</a>
-        </form>
-    </div>
-</div>
-
-    
+    <div class="text">
+        <h2 id="areas">
+            Areas of Increased Expenditure :
+        </h2>
+        <ul>
+            <li>You have increased your spendings on movies by 200%</li>
+            <li>You dined at the restaurant more frequently in the past month
+                by 25%</li>
+                <li>You have increased your spendings on clothes by 50%</li>
+        </ul>
+        <br><br>
+        <h2 id="ai">AI Personalized Suggestions:</h2>
+        <ul>
+            <li>Try eating more at hawker centers, this would reduced your
+                spendings on food by 38%</li>
+                <li> Try to cut down on movie outings to save more money</li>
+                <li>Clothing expenses may be a one-time expenditure for
+                    holiday season, will monitor your spendings for next month</li>
+        </ul>
+    </div>     
 </body>
 </html>
